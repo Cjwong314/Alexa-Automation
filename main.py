@@ -3,21 +3,12 @@ import json
 import time
 import pico_4wd as car
 
-#Post Man 
-#{"D": "true"}
-#ws://192.168.1.127:8765 for Etavon
-#ws://192.168.10.107:8765 for LHS
 NAME = "my_pico_car"
 
-#Wifi at Home
+#Wifi connection for Web Socket 
 # WIFI_MODE = "sta"
-# SSID = "Etavon"
-# PASSWORD = "CU must win!"
-
-# Wifi at Lutheran 
-WIFI_MODE = "sta"
-SSID = "LHS"
-PASSWORD = "Turn in your homework."
+# SSID = "PUT YOUR WIFI NAME HERE"
+# PASSWORD = "wIFI PASSWORD HERE"
 
 
 ws = WS_Server(name=NAME, mode=WIFI_MODE, ssid=SSID, password=PASSWORD)
