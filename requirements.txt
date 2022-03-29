@@ -1,0 +1,9 @@
+websockets
+SpeechRecognition
+pyaudio
+gtts
+playsound
+pyttsx3
+ibm_watson
+ibm_watson.websocket
+ibm_cloud_sdk_core.authenticators
