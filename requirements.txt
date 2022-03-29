@@ -3,4 +3,5 @@ SpeechRecognition
 pyaudio
 gtts
 playsound
-
+asyncio
+keyboard
