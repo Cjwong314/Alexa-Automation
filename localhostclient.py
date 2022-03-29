@@ -3,7 +3,7 @@
 import asyncio
 import websockets
 
-name  = "joe"
+name  = "TEST"
 
 async def hello(name):
     async with websockets.connect('ws://localhost:8765') as websocket:
