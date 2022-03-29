@@ -57,10 +57,7 @@ async def hello():
     name = voice()
    
     #uri = "ws://localhost:8765"
-    #luhi
-    #uri = "ws://192.168.10.107:8765"
-    #home
-    uri = "ws://192.168.1.127:8765"
+ 
     async with websockets.connect(uri) as websocket:
         await websocket.send(name)
         print(f">>> {name}")
