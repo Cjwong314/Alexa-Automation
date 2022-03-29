@@ -3,9 +3,11 @@ import websockets
 import keyboard
 import speech_recognition as sr
 from gtts import gTTS
-# Initialize the recognizer
+
+# Initialize the voice recognizer
 r = sr.Recognizer()
- 
+
+#function that allows the pico 4wd code to be controlled with "WASD"
 def test_key():   
     name = ""
     if keyboard.read_key() == "a":
@@ -19,6 +21,7 @@ def test_key():
         name = '{"D": "true"}'
     return name
 
+#function that allows for the car to be controlled with voice commands "Forward, Left, Right, Back"
 def voice():
      with sr.Microphone() as source2:
             name = ""
@@ -51,7 +54,7 @@ def voice():
                 name = '{"W": "true"}'
             return name
         
-# sends name to websocket
+# sends command to the websocket hosted by the local server or pico 4wd car.
 async def hello():
         #name = test_key()
     name = voice()
@@ -65,10 +68,12 @@ async def hello():
         greeting = await websocket.recv()
         print(f"<<< {greeting}")
 
+       
 def main():
     #voice()
     asyncio.run(hello())
 
+#Will continue to check for user inputs.
 while True:
     try: 
         main()
